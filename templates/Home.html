@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Machine Learning Project</title>
+
+<style>
+
+/* BASE */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #e2e8f0);
+    color: #1e293b;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar h2 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.nav-links a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: #475569;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+/* CONTENEDOR */
+.container {
+    text-align: center;
+    margin-top: 120px;
+    padding: 20px;
+}
+
+/* TITULO */
+h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #64748b;
+    margin-bottom: 60px;
+    font-size: 18px;
+}
+
+/* BOTONES PRINCIPALES */
+.main-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* BOTON GRANDE */
+.main-btn {
+    width: 260px;
+    height: 140px;
+    border-radius: 16px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    border: 1px solid #e5e7eb;
+}
+
+/* EFECTO HOVER */
+.main-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* TITULO BOTON */
+.main-btn h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+/* SUBTEXTO */
+.main-btn p {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* COLORES DIFERENTES */
+.use-case {
+    border-left: 5px solid #3b82f6;
+}
+
+.regression {
+    border-left: 5px solid #10b981;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <h2>ML Project</h2>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/use-cases">Use Cases</a>
+        <a href="/LinearRegression">Regression</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h1>Machine Learning</h1>
+    <p class="subtitle">Artificial Intelligence Project</p>
+
+    <div class="main-buttons">
+
+        <!-- CASOS DE USO -->
+        <a href="/use-cases" class="main-btn use-case">
+            <h3>Use Cases</h3>
+            <p>Explore real-world applications</p>
+        </a>
+
+        <!-- REGRESION -->
+        <a href="/LinearRegression" class="main-btn regression">
+            <h3>Linear Regression</h3>
+            <p>Prediction model & analysis</p>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

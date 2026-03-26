@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Linear Regression Grades</title>
+
+<style>
+
+/* BASE */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #e2e8f0);
+    color: #1e293b;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar h2 {
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: #475569;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+/* CONTENEDOR */
+.container {
+    max-width: 450px;
+    margin: 120px auto;
+    padding: 30px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    border-left: 6px solid #10b981;
+    text-align: center;
+}
+
+/* TITULO */
+h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* INPUT */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #cbd5f5;
+}
+
+/* BOTON */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #2563eb;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1e40af;
+}
+
+/* RESULTADO */
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    background: #ecfdf5;
+    border-left: 4px solid #10b981;
+    border-radius: 6px;
+}
+
+/* BACK */
+.back {
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
+    color: #475569;
+}
+
+.back:hover {
+    color: #2563eb;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <h2>ML Project</h2>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/use-cases">Use Cases</a>
+        <a href="/LinearRegression">Regression</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>Predict Grade Based on Study Hours</h1>
+
+        <form method="post">
+            <input type="number" name="hours" placeholder="Enter study hours" required>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if result is not none %}
+        <div class="result">
+            Estimated Grade: <strong>{{ result }}</strong>
+        </div>
+        {% endif %}
+
+    </div>
+
+    <a href="/LinearRegression" class="back">⬅ Back to Regression</a>
+
+</div>
+
+</body>
+</html>

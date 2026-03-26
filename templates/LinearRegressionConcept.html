@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Linear Regression Concepts</title>
+
+<style>
+
+/* BASE */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #e2e8f0);
+    color: #1e293b;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar h2 {
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: #475569;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+/* CONTENEDOR */
+.container {
+    max-width: 950px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+/* TITULO */
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 40px;
+}
+
+/* CARD PRINCIPAL */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+    border-left: 6px solid #2563eb;
+}
+
+/* SECCIONES */
+.section {
+    margin-bottom: 25px;
+}
+
+.section h3 {
+    margin-bottom: 8px;
+}
+
+.section p {
+    margin: 0;
+    color: #475569;
+}
+
+/* LISTA */
+ul {
+    margin-top: 10px;
+    color: #475569;
+}
+
+/* ECUACION */
+.formula {
+    margin-top: 10px;
+    padding: 10px;
+    background: #f1f5f9;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* BOTON */
+.back {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #475569;
+}
+
+.back:hover {
+    color: #2563eb;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <h2>ML Project</h2>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/use-cases">Use Cases</a>
+        <a href="/LinearRegression">Regression</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h1>Linear Regression - Basic Concepts</h1>
+    <p class="subtitle">Understanding the fundamentals of regression models</p>
+
+    <div class="card">
+
+        <div class="section">
+            <h3>What is Linear Regression?</h3>
+            <p>
+                Linear regression is a supervised machine learning algorithm used to predict continuous values.
+                It identifies the best linear relationship between independent variables and a dependent variable.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>Independent and Dependent Variables</h3>
+            <p>
+                Independent variables (X) are inputs used to make predictions,
+                while the dependent variable (Y) is the output the model predicts.
+            </p>
+            <ul>
+                <li><strong>Independent variables:</strong> Grid position and number of laps</li>
+                <li><strong>Dependent variable:</strong> Points</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Training Data</h3>
+            <p>
+                Training data consists of historical records that allow the model to learn patterns
+                between inputs and outputs.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>Regression Line</h3>
+            <p>
+                The regression line represents the best fit for the data points and is used to make predictions.
+            </p>
+            <div class="formula">y = b0 + b1x</div>
+        </div>
+
+        <div class="section">
+            <h3>Slope and Intercept</h3>
+            <p>
+                The slope (b1) shows how much Y changes with X,
+                while the intercept (b0) is the value of Y when X equals zero.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>Example of Application</h3>
+            <p>
+                In this project, linear regression is used to predict race points based on
+                starting position and number of laps.
+            </p>
+        </div>
+
+    </div>
+
+    <a href="/LinearRegression" class="back">⬅ Back to Regression Menu</a>
+
+</div>
+
+</body>
+</html>
