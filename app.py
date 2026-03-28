@@ -42,3 +42,6 @@ def application():
         result=result,
         plot=plot
     )
+@app.route("/LogisticRegression")
+def LogisticRegression():
+    return render_template('LogisticRegression.html')
