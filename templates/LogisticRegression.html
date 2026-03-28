@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Logistic Regression - Concepts</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #e2e8f0);
+    color: #1e293b;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+}
+
+.navbar a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #475569;
+}
+
+/* CONTENIDO */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.section h2 {
+    margin-top: 0;
+    color: #2563eb;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div><strong>ML Project</strong></div>
+    <div>
+        <a href="/">Home</a>
+        <a href="/use-cases">Use Cases</a>
+        <a href="/LinearRegression">Regression</a>
+        <a href="/LogisticRegression">Logistic</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h1>Logistic Regression - Basic Concepts</h1>
+
+    <!-- WHAT IS -->
+    <div class="section">
+        <h2>What is Logistic Regression?</h2>
+        <p>
+            Logistic Regression is a supervised machine learning algorithm used for classification problems.
+            It predicts the probability that an instance belongs to a specific class.
+        </p>
+    </div>
+
+    <!-- DIFFERENCE -->
+    <div class="section">
+        <h2>Regression vs Classification</h2>
+        <p>
+            Regression predicts continuous values, while classification predicts categories or classes.
+            Logistic regression is used for classification tasks.
+        </p>
+    </div>
+
+    <!-- BINARY -->
+    <div class="section">
+        <h2>Binary Classification</h2>
+        <p>
+            Binary classification means there are only two possible outcomes, such as Yes/No, True/False,
+            or Approved/Rejected.
+        </p>
+    </div>
+
+    <!-- TARGET -->
+    <div class="section">
+        <h2>Target Variable</h2>
+        <p>
+            The target variable is the output we want to predict. In logistic regression, it is usually a binary value (0 or 1).
+        </p>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="section">
+        <h2>Features / Predictors</h2>
+        <p>
+            Features are the input variables used to make predictions, such as age, salary, or credit history.
+        </p>
+    </div>
+
+    <!-- PROBABILITY -->
+    <div class="section">
+        <h2>Probability Estimation</h2>
+        <p>
+            Logistic regression outputs a probability between 0 and 1 that represents how likely an event is to occur.
+        </p>
+    </div>
+
+    <!-- DECISION -->
+    <div class="section">
+        <h2>Decision Boundary</h2>
+        <p>
+            The decision boundary is the threshold used to separate classes, usually 0.5.
+        </p>
+    </div>
+
+    <!-- THRESHOLD -->
+    <div class="section">
+        <h2>Classification Threshold</h2>
+        <p>
+            If the predicted probability is greater than 0.5, the model predicts class 1; otherwise, class 0.
+        </p>
+    </div>
+
+    <!-- EXAMPLE -->
+    <div class="section">
+        <h2>Real-world Example</h2>
+        <p>
+            A bank can use logistic regression to decide whether to approve a loan based on a customer's financial data.
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
