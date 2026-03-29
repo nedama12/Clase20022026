@@ -44,4 +44,4 @@ def application():
     )
 @app.route("/LogisticRegression")
 def LogisticRegression():
-    return render_template('HomeLogisticRegression')
+    return render_template('HomeLogisticRegression.html')
