@@ -10,8 +10,29 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #eef2f7, #e2e8f0);
-    color: #1e293b;
+    background: linear-gradient(135deg, #0f172a, #1e293b, #020617);
+    color: #e2e8f0;
+}
+
+/* FONDO */
+.bg-glow {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(139,92,246,0.25), transparent);
+    top: -150px;
+    left: -150px;
+    filter: blur(120px);
+}
+
+.bg-glow2 {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(56,189,248,0.25), transparent);
+    bottom: -150px;
+    right: -150px;
+    filter: blur(120px);
 }
 
 /* NAVBAR */
@@ -20,20 +41,24 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 40px;
-    background: rgba(255,255,255,0.7);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #e5e7eb;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.navbar h2 {
+    color: #38bdf8;
 }
 
 .nav-links a {
     text-decoration: none;
     margin-left: 20px;
-    color: #475569;
-    font-weight: 500;
+    color: #cbd5f5;
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
-    color: #2563eb;
+    color: #38bdf8;
 }
 
 /* CONTENEDOR */
@@ -41,18 +66,21 @@ body {
     text-align: center;
     margin-top: 120px;
     padding: 20px;
+    animation: fadeUp 1s ease;
 }
 
 /* TITULO */
 h1 {
-    font-size: 48px;
+    font-size: 50px;
+    background: linear-gradient(90deg, #8b5cf6, #38bdf8);
+    -webkit-background-clip: text;
+    color: transparent;
     margin-bottom: 10px;
 }
 
 .subtitle {
-    color: #64748b;
+    color: #94a3b8;
     margin-bottom: 60px;
-    font-size: 18px;
 }
 
 /* BOTONES */
@@ -63,45 +91,51 @@ h1 {
     flex-wrap: wrap;
 }
 
-/* BOTON */
+/* TARJETAS */
 .main-btn {
     width: 260px;
-    height: 140px;
-    border-radius: 16px;
+    height: 150px;
+    border-radius: 18px;
     text-decoration: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: white;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-    transition: 0.3s;
-    border: 1px solid #e5e7eb;
+
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    transition: 0.4s;
 }
 
+/* HOVER */
 .main-btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(139,92,246,0.3);
 }
 
+/* TEXTO */
 .main-btn h3 {
     margin: 0;
     font-size: 20px;
+    color: #e2e8f0;
 }
 
 .main-btn p {
     margin-top: 8px;
     font-size: 14px;
-    color: #64748b;
+    color: #94a3b8;
 }
 
 /* COLORES */
 .concepts {
-    border-left: 5px solid #3b82f6;
+    border-left: 5px solid #38bdf8;
 }
 
 .application {
-    border-left: 5px solid #10b981;
+    border-left: 5px solid #22c55e;
 }
 
 /* BACK */
@@ -109,18 +143,33 @@ h1 {
     margin-top: 60px;
     display: inline-block;
     text-decoration: none;
-    color: #475569;
-    font-weight: 500;
+    color: #94a3b8;
+    transition: 0.3s;
 }
 
 .back:hover {
-    color: #2563eb;
+    color: #38bdf8;
+}
+
+/* ANIMACIÓN */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 </style>
 </head>
 
 <body>
+
+<div class="bg-glow"></div>
+<div class="bg-glow2"></div>
 
 <nav class="navbar">
     <h2>ML Project</h2>
@@ -135,18 +184,16 @@ h1 {
 
 <div class="container">
 
-    <h1>Support Vector Machine (SVC)</h1>
+    <h1>Support Vector Machine</h1>
     <p class="subtitle">Explore concepts and application</p>
 
     <div class="main-buttons">
 
-        <!-- CONCEPTS -->
         <a href="/SVMConcepts" class="main-btn concepts">
             <h3>Concepts</h3>
             <p>Understand the theory</p>
         </a>
 
-        <!-- APPLICATION -->
         <a href="/SVMApplication" class="main-btn application">
             <h3>Application</h3>
             <p>Use the classification model</p>
@@ -159,4 +206,4 @@ h1 {
 </div>
 
 </body>
-</html>s
+</html>

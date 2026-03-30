@@ -6,65 +6,111 @@
 
 <style>
 
+/* BASE */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #eef2f7, #e2e8f0);
-    color: #1e293b;
+    background: linear-gradient(135deg, #0f172a, #1e293b, #020617);
+    color: #e2e8f0;
+}
+
+/* FONDO */
+.bg-glow {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(139,92,246,0.25), transparent);
+    top: -150px;
+    left: -150px;
+    filter: blur(120px);
+}
+
+.bg-glow2 {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(56,189,248,0.25), transparent);
+    bottom: -150px;
+    right: -150px;
+    filter: blur(120px);
 }
 
 /* HEADER */
 .header {
     text-align: center;
-    margin-top: 60px;
+    margin-top: 80px;
+    animation: fadeUp 1s ease;
 }
 
 .header h1 {
-    font-size: 36px;
+    font-size: 42px;
     margin-bottom: 10px;
+    background: linear-gradient(90deg, #8b5cf6, #38bdf8);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .header p {
-    color: #64748b;
+    color: #94a3b8;
 }
 
 /* CARD */
 .card {
     max-width: 900px;
     margin: 40px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 16px;
-    border-left: 6px solid #3b82f6;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    padding: 35px;
+
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(18px);
+
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    animation: fadeUp 1.4s ease;
 }
 
 /* TITLES */
 h2 {
-    margin-top: 20px;
+    margin-top: 25px;
+    color: #38bdf8;
 }
 
+/* TEXTO */
 p {
-    color: #475569;
+    color: #cbd5f5;
     line-height: 1.6;
 }
 
-/* LIST */
+/* LISTAS */
 ul {
-    color: #475569;
+    color: #cbd5f5;
 }
 
 /* BACK */
 .back {
     display: block;
     width: fit-content;
-    margin: 20px auto;
+    margin: 30px auto;
     text-decoration: none;
-    color: #475569;
+    color: #94a3b8;
+    transition: 0.3s;
 }
 
 .back:hover {
-    color: #2563eb;
+    color: #38bdf8;
+}
+
+/* ANIMACIÓN */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 </style>
@@ -72,61 +118,62 @@ ul {
 
 <body>
 
+<div class="bg-glow"></div>
+<div class="bg-glow2"></div>
+
 <div class="header">
-    <h1>Support Vector Machine (SVM) - Basic Concepts</h1>
-    <p>Understanding classification using SVM</p>
+    <h1>SVM - Basic Concepts</h1>
+    <p>Understanding classification using Support Vector Machines</p>
 </div>
 
 <div class="card">
 
-    <h2>What is Support Vector Machine (SVM)?</h2>
+    <h2>What is SVM?</h2>
     <p>
         Support Vector Machine (SVM) is a supervised machine learning algorithm used for classification tasks.
-        It works by finding the optimal boundary that separates different classes in a dataset.
+        It finds the optimal boundary that separates different classes in a dataset.
     </p>
 
     <h2>Hyperplane</h2>
     <p>
-        A hyperplane is a decision boundary that separates data points into different classes.
-        In two dimensions, it is a line, while in higher dimensions, it becomes a plane.
+        A hyperplane is the decision boundary that separates data into classes.
+        In 2D it is a line, in higher dimensions it becomes a plane.
     </p>
 
     <h2>Margin</h2>
     <p>
-        The margin is the distance between the hyperplane and the closest data points from each class.
-        SVM aims to maximize this margin to improve classification performance.
+        The margin is the distance between the hyperplane and the closest data points.
+        SVM tries to maximize this margin.
     </p>
 
     <h2>Support Vectors</h2>
     <p>
-        Support vectors are the data points that are closest to the decision boundary.
-        These points are critical because they define the position of the hyperplane.
+        These are the closest points to the decision boundary and define the model.
     </p>
 
     <h2>Kernel Trick</h2>
     <p>
-        The kernel trick allows SVM to handle non-linear data by transforming it into a higher-dimensional space.
-        This makes it possible to separate data that is not linearly separable.
+        Allows SVM to work with non-linear data by transforming it into higher dimensions.
     </p>
 
     <ul>
-        <li><strong>Linear Kernel:</strong> Used for linearly separable data.</li>
-        <li><strong>Polynomial Kernel:</strong> Used for more complex relationships.</li>
-        <li><strong>RBF Kernel:</strong> Handles non-linear data (commonly used).</li>
+        <li><strong>Linear:</strong> Simple separation</li>
+        <li><strong>Polynomial:</strong> More complex relations</li>
+        <li><strong>RBF:</strong> Handles non-linear data</li>
     </ul>
 
     <h2>Advantages</h2>
     <ul>
-        <li>Effective in high-dimensional spaces</li>
-        <li>Works well with complex datasets</li>
-        <li>Robust against overfitting</li>
+        <li>Works well in high dimensions</li>
+        <li>Good with complex datasets</li>
+        <li>Less overfitting</li>
     </ul>
 
     <h2>Limitations</h2>
     <ul>
         <li>Computationally expensive</li>
-        <li>Requires parameter tuning</li>
-        <li>Harder to interpret than simpler models</li>
+        <li>Needs tuning</li>
+        <li>Hard to interpret</li>
     </ul>
 
     <h2>Use Cases</h2>
@@ -136,9 +183,9 @@ ul {
         <li>Spam detection</li>
     </ul>
 
-    <h2>Real-world Example</h2>
+    <h2>Real Example</h2>
     <p>
-        In this project, SVM is used to predict whether a passenger survived the Titanic disaster based on features such as age, gender, and ticket class.
+        In this project, SVM predicts Titanic survival using features like age, gender and class.
     </p>
 
 </div>

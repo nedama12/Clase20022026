@@ -6,36 +6,80 @@
 
 <style>
 
+/* BASE */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #eef2f7, #e2e8f0);
-    color: #1e293b;
+    background: linear-gradient(135deg, #0f172a, #1e293b, #020617);
+    color: #e2e8f0;
+}
+
+/* FONDO */
+.bg-glow {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(139,92,246,0.25), transparent);
+    top: -150px;
+    left: -150px;
+    filter: blur(120px);
+}
+
+.bg-glow2 {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(34,197,94,0.25), transparent);
+    bottom: -150px;
+    right: -150px;
+    filter: blur(120px);
 }
 
 /* HEADER */
 .header {
     text-align: center;
-    margin-top: 60px;
+    margin-top: 80px;
+    animation: fadeUp 1s ease;
 }
 
 .header h1 {
-    font-size: 36px;
+    font-size: 42px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #8b5cf6, #22c55e);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .header p {
-    color: #64748b;
+    color: #94a3b8;
 }
 
 /* CARD */
 .card {
     max-width: 1000px;
     margin: 40px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 16px;
-    border-left: 6px solid #10b981;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    padding: 35px;
+
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(18px);
+
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    animation: fadeUp 1.4s ease;
+}
+
+/* TITLES */
+h2 {
+    margin-top: 25px;
+    color: #22c55e;
+}
+
+/* TEXT */
+p {
+    color: #cbd5f5;
+    line-height: 1.6;
 }
 
 /* FORM */
@@ -47,56 +91,91 @@ form {
 }
 
 input {
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.3);
+    color: #e2e8f0;
+    outline: none;
 }
 
+input::placeholder {
+    color: #94a3b8;
+}
+
+/* BUTTON */
 button {
     grid-column: span 2;
-    padding: 12px;
+    padding: 14px;
     border: none;
-    border-radius: 10px;
-    background: #10b981;
-    color: white;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #22c55e, #4ade80);
+    color: #020617;
     font-weight: bold;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 button:hover {
-    background: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(34,197,94,0.4);
 }
 
 /* RESULT */
 .result {
     margin-top: 20px;
     padding: 15px;
-    background: #f1f5f9;
     border-radius: 10px;
+    background: rgba(34,197,94,0.1);
+    border: 1px solid rgba(34,197,94,0.3);
 }
 
 /* METRICS */
 .metrics {
     margin-top: 30px;
+    padding: 20px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.metrics p {
+    margin: 6px 0;
 }
 
 /* BACK */
 .back {
     display: block;
     width: fit-content;
-    margin: 20px auto;
+    margin: 30px auto;
     text-decoration: none;
-    color: #475569;
+    color: #94a3b8;
+    transition: 0.3s;
 }
 
 .back:hover {
-    color: #2563eb;
+    color: #22c55e;
+}
+
+/* ANIMACIÓN */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 </style>
 </head>
 
 <body>
+
+<div class="bg-glow"></div>
+<div class="bg-glow2"></div>
 
 <div class="header">
     <h1>SVM - Application</h1>
@@ -112,8 +191,8 @@ button:hover {
 
     <h2>Dataset</h2>
     <p>
-        The Titanic dataset includes passenger data such as age, gender, ticket class, and fare.
-        The target variable is <strong>Survived</strong> (0 = Did not survive, 1 = Survived).
+        Includes features like age, gender, class and fare.
+        Target: <strong>Survived (0 / 1)</strong>
     </p>
 
     <h2>Prediction Form</h2>
@@ -121,18 +200,15 @@ button:hover {
     <form method="POST">
 
         <input type="number" name="Pclass" placeholder="Passenger Class (1-3)" required>
-
         <input type="number" name="Sex" placeholder="Sex (0 = Male, 1 = Female)" required>
 
         <input type="number" step="any" name="Age" placeholder="Age" required>
-
         <input type="number" name="SibSp" placeholder="Siblings / Spouses" required>
 
         <input type="number" name="Parch" placeholder="Parents / Children" required>
-
         <input type="number" step="any" name="Fare" placeholder="Fare" required>
 
-        <input type="number" name="Embarked" placeholder="Embarked (0=S, 1=C, 2=Q)" required>
+        <input type="number" name="Embarked" placeholder="Embarked (0=S,1=C,2=Q)" required>
 
         <button type="submit">Predict</button>
 
@@ -154,8 +230,8 @@ button:hover {
 
     <h2>Interpretation</h2>
     <p>
-        The model predicts passenger survival using SVM with a kernel function.
-        The evaluation metrics indicate how well the model performs in classifying survival outcomes.
+        The SVM model classifies survival using a decision boundary.
+        Metrics show how reliable the predictions are.
     </p>
 
 </div>
