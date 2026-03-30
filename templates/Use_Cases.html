@@ -10,8 +10,31 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #eef2f7, #e2e8f0);
-    color: #1e293b;
+    background: linear-gradient(135deg, #0f172a, #1e293b, #020617);
+    color: #e2e8f0;
+}
+
+/* FONDO */
+body::before {
+    content: "";
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(56,189,248,0.25), transparent);
+    top: -120px;
+    left: -120px;
+    filter: blur(100px);
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(139,92,246,0.25), transparent);
+    bottom: -120px;
+    right: -120px;
+    filter: blur(100px);
 }
 
 /* NAVBAR */
@@ -20,25 +43,27 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 40px;
-    background: rgba(255,255,255,0.7);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #e5e7eb;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .navbar h2 {
     margin: 0;
     font-weight: 600;
+    color: #38bdf8;
 }
 
 .nav-links a {
     text-decoration: none;
     margin-left: 20px;
-    color: #475569;
+    color: #cbd5f5;
     font-weight: 500;
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
-    color: #2563eb;
+    color: #38bdf8;
 }
 
 /* CONTENEDOR */
@@ -50,12 +75,16 @@ body {
 
 /* TITULO */
 h1 {
-    font-size: 42px;
+    font-size: 44px;
     margin-bottom: 10px;
+    background: linear-gradient(90deg, #38bdf8, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text; /* 👈 FIX WARNING */
+    color: transparent;
 }
 
 .subtitle {
-    color: #64748b;
+    color: #94a3b8;
     margin-bottom: 40px;
 }
 
@@ -70,20 +99,21 @@ h1 {
 
 /* TARJETA */
 .card {
-    background: white;
+    background: rgba(255,255,255,0.05);
     padding: 25px;
-    border-radius: 14px;
+    border-radius: 16px;
     text-decoration: none;
-    color: #1e293b;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.06);
-    transition: 0.3s;
-    border: 1px solid #e5e7eb;
+    color: #e2e8f0;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: 0.35s;
 }
 
-/* HOVER */
+/* HOVER PRO */
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 25px rgba(56,189,248,0.4);
 }
 
 /* TITULO TARJETA */
@@ -96,26 +126,27 @@ h1 {
 .card p {
     margin-top: 10px;
     font-size: 14px;
-    color: #64748b;
+    color: #94a3b8;
 }
 
-/* COLORES LATERALES */
-.card1 { border-left: 5px solid #3b82f6; }
-.card2 { border-left: 5px solid #10b981; }
-.card3 { border-left: 5px solid #f59e0b; }
-.card4 { border-left: 5px solid #ef4444; }
+/* COLORES */
+.card1 { border-left: 4px solid #3b82f6; }
+.card2 { border-left: 4px solid #22c55e; }
+.card3 { border-left: 4px solid #f59e0b; }
+.card4 { border-left: 4px solid #ef4444; }
 
-/* BOTON VOLVER */
+/* BACK */
 .back {
     display: inline-block;
     margin-top: 40px;
     text-decoration: none;
-    color: #475569;
+    color: #94a3b8;
     font-size: 14px;
+    transition: 0.3s;
 }
 
 .back:hover {
-    color: #2563eb;
+    color: #38bdf8;
 }
 
 </style>
