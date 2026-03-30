@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Machine Learning Project</title>
+<title>Support Vector Machine (SVC) Menu</title>
 
 <style>
 
@@ -25,17 +25,11 @@ body {
     border-bottom: 1px solid #e5e7eb;
 }
 
-.navbar h2 {
-    margin: 0;
-    font-weight: 600;
-}
-
 .nav-links a {
     text-decoration: none;
     margin-left: 20px;
     color: #475569;
     font-weight: 500;
-    transition: 0.2s;
 }
 
 .nav-links a:hover {
@@ -61,7 +55,7 @@ h1 {
     font-size: 18px;
 }
 
-/* BOTONES PRINCIPALES */
+/* BOTONES */
 .main-buttons {
     display: flex;
     justify-content: center;
@@ -69,7 +63,7 @@ h1 {
     flex-wrap: wrap;
 }
 
-/* BOTON GRANDE */
+/* BOTON */
 .main-btn {
     width: 260px;
     height: 140px;
@@ -85,19 +79,16 @@ h1 {
     border: 1px solid #e5e7eb;
 }
 
-/* EFECTO HOVER */
 .main-btn:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
-/* TITULO BOTON */
 .main-btn h3 {
     margin: 0;
     font-size: 20px;
 }
 
-/* SUBTEXTO */
 .main-btn p {
     margin-top: 8px;
     font-size: 14px;
@@ -105,20 +96,25 @@ h1 {
 }
 
 /* COLORES */
-.use-case {
+.concepts {
     border-left: 5px solid #3b82f6;
 }
 
-.regression {
+.application {
     border-left: 5px solid #10b981;
 }
 
-.logistic {
-    border-left: 5px solid #f59e0b;
+/* BACK */
+.back {
+    margin-top: 60px;
+    display: inline-block;
+    text-decoration: none;
+    color: #475569;
+    font-weight: 500;
 }
 
-.svm {
-    border-left: 5px solid #8b5cf6;
+.back:hover {
+    color: #2563eb;
 }
 
 </style>
@@ -139,38 +135,28 @@ h1 {
 
 <div class="container">
 
-    <h1>Machine Learning</h1>
+    <h1>Support Vector Machine (SVC)</h1>
     <p class="subtitle">Explore concepts and application</p>
 
     <div class="main-buttons">
 
-        <!-- USE CASES -->
-        <a href="/use-cases" class="main-btn use-case">
-            <h3>Use Cases</h3>
-            <p>Explore real-world applications</p>
+        <!-- CONCEPTS -->
+        <a href="/SVMConcepts" class="main-btn concepts">
+            <h3>Concepts</h3>
+            <p>Understand the theory</p>
         </a>
 
-        <!-- LINEAR -->
-        <a href="/LinearRegression" class="main-btn regression">
-            <h3>Linear Regression</h3>
-            <p>Prediction model & analysis</p>
-        </a>
-
-        <!-- LOGISTIC -->
-        <a href="/LogisticRegression" class="main-btn logistic">
-            <h3>Logistic Regression</h3>
-            <p>Predict yes or no outcomes</p>
-        </a>
-
-        <!-- SVM -->
-        <a href="/SVM" class="main-btn svm">
-            <h3>SVM (Support Vector Machine)</h3>
-            <p>Advanced classification model</p>
+        <!-- APPLICATION -->
+        <a href="/SVMApplication" class="main-btn application">
+            <h3>Application</h3>
+            <p>Use the classification model</p>
         </a>
 
     </div>
 
+    <a href="/" class="back">← Back to Home</a>
+
 </div>
 
 </body>
-</html>
+</html>s
