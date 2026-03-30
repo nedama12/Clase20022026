@@ -6,11 +6,35 @@
 
 <style>
 
+/* BASE */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #eef2f7, #e2e8f0);
-    color: #1e293b;
+    background: linear-gradient(135deg, #0f172a, #1e293b, #020617);
+    color: #e2e8f0;
+}
+
+/* FONDO */
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(139,92,246,0.25), transparent);
+    top: -150px;
+    left: -150px;
+    filter: blur(120px);
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(56,189,248,0.25), transparent);
+    bottom: -150px;
+    right: -150px;
+    filter: blur(120px);
 }
 
 /* NAVBAR */
@@ -18,39 +42,65 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 15px 40px;
-    background: rgba(255,255,255,0.7);
-    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .navbar a {
     margin-left: 20px;
     text-decoration: none;
-    color: #475569;
+    color: #cbd5f5;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #38bdf8;
 }
 
 /* CONTENIDO */
 .container {
     max-width: 900px;
     margin: auto;
-    padding: 40px;
+    padding: 50px 20px;
 }
 
+/* TITULO */
 h1 {
     text-align: center;
     margin-bottom: 30px;
+    background: linear-gradient(90deg, #38bdf8, #8b5cf6);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
+/* TARJETAS */
 .section {
-    background: white;
-    padding: 20px;
+    background: rgba(255,255,255,0.05);
+    padding: 22px;
     margin-bottom: 20px;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-radius: 14px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: 0.3s;
 }
 
+/* HOVER */
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(139,92,246,0.3);
+}
+
+/* TITULOS */
 .section h2 {
     margin-top: 0;
-    color: #2563eb;
+    color: #38bdf8;
+}
+
+/* TEXTO */
+.section p {
+    color: #94a3b8;
 }
 
 </style>
@@ -73,7 +123,6 @@ h1 {
 
     <h1>Logistic Regression - Basic Concepts</h1>
 
-    <!-- WHAT IS -->
     <div class="section">
         <h2>What is Logistic Regression?</h2>
         <p>
@@ -82,7 +131,6 @@ h1 {
         </p>
     </div>
 
-    <!-- DIFFERENCE -->
     <div class="section">
         <h2>Regression vs Classification</h2>
         <p>
@@ -91,7 +139,6 @@ h1 {
         </p>
     </div>
 
-    <!-- BINARY -->
     <div class="section">
         <h2>Binary Classification</h2>
         <p>
@@ -100,7 +147,6 @@ h1 {
         </p>
     </div>
 
-    <!-- TARGET -->
     <div class="section">
         <h2>Target Variable</h2>
         <p>
@@ -108,7 +154,6 @@ h1 {
         </p>
     </div>
 
-    <!-- FEATURES -->
     <div class="section">
         <h2>Features / Predictors</h2>
         <p>
@@ -116,7 +161,6 @@ h1 {
         </p>
     </div>
 
-    <!-- PROBABILITY -->
     <div class="section">
         <h2>Probability Estimation</h2>
         <p>
@@ -124,7 +168,6 @@ h1 {
         </p>
     </div>
 
-    <!-- DECISION -->
     <div class="section">
         <h2>Decision Boundary</h2>
         <p>
@@ -132,7 +175,6 @@ h1 {
         </p>
     </div>
 
-    <!-- THRESHOLD -->
     <div class="section">
         <h2>Classification Threshold</h2>
         <p>
@@ -140,7 +182,6 @@ h1 {
         </p>
     </div>
 
-    <!-- EXAMPLE -->
     <div class="section">
         <h2>Real-world Example</h2>
         <p>
