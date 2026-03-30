@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Logistic Regression - Application</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #e2e8f0);
+    color: #1e293b;
+}
+
+.header {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.header h1 {
+    font-size: 36px;
+}
+
+.header p {
+    color: #64748b;
+}
+
+/* CARD */
+.card {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    border-left: 6px solid #10b981;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+/* FORM */
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    grid-column: span 2;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #10b981;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #059669;
+}
+
+/* RESULT */
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+/* METRICS */
+.metrics {
+    margin-top: 30px;
+}
+
+.metrics p {
+    margin: 5px 0;
+}
+
+/* BACK */
+.back {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    text-decoration: none;
+    color: #475569;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Logistic Regression - Application</h1>
+    <p>Diabetes Prediction Model</p>
+</div>
+
+<div class="card">
+
+    <h2>Problem Description</h2>
+    <p>
+        This model predicts whether a patient has diabetes based on medical attributes.
+    </p>
+
+    <h2>Dataset</h2>
+    <p>
+        The dataset contains medical data such as glucose level, BMI, age, and more.
+        The target variable is <strong>Outcome</strong> (0 = No diabetes, 1 = Diabetes).
+    </p>
+
+    <h2>Prediction Form</h2>
+
+    <form method="POST">
+        <input type="number" step="any" name="Pregnancies" placeholder="Pregnancies" required>
+        <input type="number" step="any" name="Glucose" placeholder="Glucose" required>
+        <input type="number" step="any" name="BloodPressure" placeholder="Blood Pressure" required>
+        <input type="number" step="any" name="SkinThickness" placeholder="Skin Thickness" required>
+        <input type="number" step="any" name="Insulin" placeholder="Insulin" required>
+        <input type="number" step="any" name="BMI" placeholder="BMI" required>
+        <input type="number" step="any" name="DiabetesPedigreeFunction" placeholder="DPF" required>
+        <input type="number" step="any" name="Age" placeholder="Age" required>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        <h3>Result: {{ prediction }}</h3>
+    </div>
+    {% endif %}
+
+    <div class="metrics">
+        <h2>Model Evaluation</h2>
+        <p><strong>Accuracy:</strong> {{ accuracy }}</p>
+        <p><strong>Precision:</strong> {{ precision }}</p>
+        <p><strong>Recall:</strong> {{ recall }}</p>
+        <p><strong>F1 Score:</strong> {{ f1 }}</p>
+    </div>
+
+    <h2>Interpretation</h2>
+    <p>
+        The model evaluates the probability of diabetes. High accuracy and precision indicate good performance
+        in predicting positive cases.
+    </p>
+
+</div>
+
+<a href="/LogisticRegression" class="back">← Back to Logistic Menu</a>
+
+</body>
+</html>
