@@ -5,6 +5,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from sklearn.svm import SVC
+from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
 
@@ -99,6 +101,68 @@ def logistic_application():
 
     return render_template(
         'LogisticRegressionApplication.html',
+        prediction=prediction,
+        accuracy=accuracy,
+        precision=precision,
+        recall=recall,
+        f1=f1
+    )
+@app.route("/SVM")
+def SVM():
+    return render_template('HomeSVM.html')
+@app.route("/SVMConcepts")
+def SVMConcepts():
+    return render_template('SVMConcepts.html')
+@app.route('/SVMApplication', methods=["GET", "POST"])
+def SVMApplication():
+
+    data = pd.read_csv('Titanic-Dataset.csv')
+
+    data = data.drop(['Name','Ticket','Cabin','PassengerId'], axis=1)
+
+    data['Sex'] = data['Sex'].map({'male': 0, 'female': 1})
+    data['Embarked'] = data['Embarked'].map({'S':0, 'C':1, 'Q':2})
+
+    data = data.dropna()
+
+    X = data.drop('Survived', axis=1)
+    y = data['Survived']
+
+    scaler = StandardScaler()
+    X = scaler.fit_transform(X)
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+    model = SVC(kernel='rbf')
+    model.fit(X_train, y_train)
+
+    y_pred = model.predict(X_test)
+
+    accuracy = round(accuracy_score(y_test, y_pred), 2)
+    precision = round(precision_score(y_test, y_pred), 2)
+    recall = round(recall_score(y_test, y_pred), 2)
+    f1 = round(f1_score(y_test, y_pred), 2)
+
+    prediction = None
+
+    if request.method == "POST":
+        values = [
+            float(request.form["Pclass"]),
+            float(request.form["Sex"]),
+            float(request.form["Age"]),
+            float(request.form["SibSp"]),
+            float(request.form["Parch"]),
+            float(request.form["Fare"]),
+            float(request.form["Embarked"])
+        ]
+
+        values = scaler.transform([values])
+        pred = model.predict(values)[0]
+
+        prediction = "Survived" if pred == 1 else "Did Not Survive"
+
+    return render_template(
+        'SVMApplication.html',
         prediction=prediction,
         accuracy=accuracy,
         precision=precision,

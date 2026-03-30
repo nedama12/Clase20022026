@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SVM - Basic Concepts</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #e2e8f0);
+    color: #1e293b;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: #64748b;
+}
+
+/* CARD */
+.card {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    border-left: 6px solid #3b82f6;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+/* TITLES */
+h2 {
+    margin-top: 20px;
+}
+
+p {
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* LIST */
+ul {
+    color: #475569;
+}
+
+/* BACK */
+.back {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    text-decoration: none;
+    color: #475569;
+}
+
+.back:hover {
+    color: #2563eb;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Support Vector Machine (SVM) - Basic Concepts</h1>
+    <p>Understanding classification using SVM</p>
+</div>
+
+<div class="card">
+
+    <h2>What is Support Vector Machine (SVM)?</h2>
+    <p>
+        Support Vector Machine (SVM) is a supervised machine learning algorithm used for classification tasks.
+        It works by finding the optimal boundary that separates different classes in a dataset.
+    </p>
+
+    <h2>Hyperplane</h2>
+    <p>
+        A hyperplane is a decision boundary that separates data points into different classes.
+        In two dimensions, it is a line, while in higher dimensions, it becomes a plane.
+    </p>
+
+    <h2>Margin</h2>
+    <p>
+        The margin is the distance between the hyperplane and the closest data points from each class.
+        SVM aims to maximize this margin to improve classification performance.
+    </p>
+
+    <h2>Support Vectors</h2>
+    <p>
+        Support vectors are the data points that are closest to the decision boundary.
+        These points are critical because they define the position of the hyperplane.
+    </p>
+
+    <h2>Kernel Trick</h2>
+    <p>
+        The kernel trick allows SVM to handle non-linear data by transforming it into a higher-dimensional space.
+        This makes it possible to separate data that is not linearly separable.
+    </p>
+
+    <ul>
+        <li><strong>Linear Kernel:</strong> Used for linearly separable data.</li>
+        <li><strong>Polynomial Kernel:</strong> Used for more complex relationships.</li>
+        <li><strong>RBF Kernel:</strong> Handles non-linear data (commonly used).</li>
+    </ul>
+
+    <h2>Advantages</h2>
+    <ul>
+        <li>Effective in high-dimensional spaces</li>
+        <li>Works well with complex datasets</li>
+        <li>Robust against overfitting</li>
+    </ul>
+
+    <h2>Limitations</h2>
+    <ul>
+        <li>Computationally expensive</li>
+        <li>Requires parameter tuning</li>
+        <li>Harder to interpret than simpler models</li>
+    </ul>
+
+    <h2>Use Cases</h2>
+    <ul>
+        <li>Medical diagnosis</li>
+        <li>Image classification</li>
+        <li>Spam detection</li>
+    </ul>
+
+    <h2>Real-world Example</h2>
+    <p>
+        In this project, SVM is used to predict whether a passenger survived the Titanic disaster based on features such as age, gender, and ticket class.
+    </p>
+
+</div>
+
+<a href="/SVM" class="back">← Back to SVM Menu</a>
+
+</body>
+</html>

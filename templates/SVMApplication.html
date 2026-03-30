@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SVM - Application</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #e2e8f0);
+    color: #1e293b;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.header h1 {
+    font-size: 36px;
+}
+
+.header p {
+    color: #64748b;
+}
+
+/* CARD */
+.card {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    border-left: 6px solid #10b981;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+/* FORM */
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    grid-column: span 2;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #10b981;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #059669;
+}
+
+/* RESULT */
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+/* METRICS */
+.metrics {
+    margin-top: 30px;
+}
+
+/* BACK */
+.back {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    text-decoration: none;
+    color: #475569;
+}
+
+.back:hover {
+    color: #2563eb;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>SVM - Application</h1>
+    <p>Titanic Survival Prediction</p>
+</div>
+
+<div class="card">
+
+    <h2>Problem Description</h2>
+    <p>
+        This model predicts whether a passenger survived the Titanic disaster based on personal and travel information.
+    </p>
+
+    <h2>Dataset</h2>
+    <p>
+        The Titanic dataset includes passenger data such as age, gender, ticket class, and fare.
+        The target variable is <strong>Survived</strong> (0 = Did not survive, 1 = Survived).
+    </p>
+
+    <h2>Prediction Form</h2>
+
+    <form method="POST">
+
+        <input type="number" name="Pclass" placeholder="Passenger Class (1-3)" required>
+
+        <input type="number" name="Sex" placeholder="Sex (0 = Male, 1 = Female)" required>
+
+        <input type="number" step="any" name="Age" placeholder="Age" required>
+
+        <input type="number" name="SibSp" placeholder="Siblings / Spouses" required>
+
+        <input type="number" name="Parch" placeholder="Parents / Children" required>
+
+        <input type="number" step="any" name="Fare" placeholder="Fare" required>
+
+        <input type="number" name="Embarked" placeholder="Embarked (0=S, 1=C, 2=Q)" required>
+
+        <button type="submit">Predict</button>
+
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        <h3>Result: {{ prediction }}</h3>
+    </div>
+    {% endif %}
+
+    <div class="metrics">
+        <h2>Model Evaluation</h2>
+        <p><strong>Accuracy:</strong> {{ accuracy }}</p>
+        <p><strong>Precision:</strong> {{ precision }}</p>
+        <p><strong>Recall:</strong> {{ recall }}</p>
+        <p><strong>F1 Score:</strong> {{ f1 }}</p>
+    </div>
+
+    <h2>Interpretation</h2>
+    <p>
+        The model predicts passenger survival using SVM with a kernel function.
+        The evaluation metrics indicate how well the model performs in classifying survival outcomes.
+    </p>
+
+</div>
+
+<a href="/SVM" class="back">← Back to SVM Menu</a>
+
+</body>
+</html>
