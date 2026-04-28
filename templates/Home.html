@@ -6,7 +6,7 @@
 
 <style>
 
-/* BASE */
+/* ===== BASE STYLES ===== */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -35,7 +35,7 @@ body {
     filter: blur(120px);
 }
 
-/* NAVBAR */
+/* ===== NAVIGATION BAR ===== */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -50,6 +50,7 @@ body {
     color: #38bdf8;
 }
 
+/* Navigation links */
 .nav-links a {
     text-decoration: none;
     margin-left: 20px;
@@ -61,14 +62,14 @@ body {
     color: #38bdf8;
 }
 
-/* CONTENEDOR */
+/* ===== MAIN CONTAINER ===== */
 .container {
     text-align: center;
     margin-top: 120px;
     padding: 20px;
 }
 
-/* TITULO */
+/* ===== MAIN TITLE ===== */
 h1 {
     font-size: 55px;
     background: linear-gradient(90deg, #38bdf8, #8b5cf6);
@@ -79,13 +80,14 @@ h1 {
     animation: fadeUp 1s ease;
 }
 
+/* Subtitle */
 .subtitle {
     color: #94a3b8;
     margin-bottom: 60px;
     animation: fadeUp 1.4s ease;
 }
 
-/* BOTONES */
+/* ===== MAIN BUTTONS CONTAINER ===== */
 .main-buttons {
     display: flex;
     justify-content: center;
@@ -93,7 +95,7 @@ h1 {
     flex-wrap: wrap;
 }
 
-/* TARJETAS */
+/* ===== CARD BUTTON STYLE ===== */
 .main-btn {
     width: 260px;
     height: 150px;
@@ -112,26 +114,27 @@ h1 {
     transition: 0.4s;
 }
 
-/* HOVER */
+/* Hover effect */
 .main-btn:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 30px rgba(56,189,248,0.2);
 }
 
-/* TEXTO */
+/* Button title */
 .main-btn h3 {
     margin: 0;
     font-size: 20px;
     color: #e2e8f0;
 }
 
+/* Button subtitle */
 .main-btn p {
     margin-top: 8px;
     font-size: 14px;
     color: #94a3b8;
 }
 
-/* COLORES LATERALES */
+/* ===== COLOR CATEGORIES ===== */
 .use-case {
     border-left: 5px solid #38bdf8;
 }
@@ -148,16 +151,9 @@ h1 {
     border-left: 5px solid #8b5cf6;
 }
 
-/* ANIMACIÓN */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* New category for Unsupervised Learning */
+.unsupervised {
+    border-left: 5px solid #ec4899;
 }
 
 </style>
@@ -165,9 +161,7 @@ h1 {
 
 <body>
 
-<div class="bg-glow"></div>
-<div class="bg-glow2"></div>
-
+<!-- ===== NAVBAR ===== -->
 <nav class="navbar">
     <h2>ML Project</h2>
     <div class="nav-links">
@@ -176,34 +170,46 @@ h1 {
         <a href="/LinearRegression">Regression</a>
         <a href="/LogisticRegression">Logistic</a>
         <a href="/SVM">SVM</a>
+        <a href="/unsupervised">Unsupervised</a>
     </div>
 </nav>
 
+<!-- ===== MAIN CONTENT ===== -->
 <div class="container">
 
     <h1>Machine Learning</h1>
-    <p class="subtitle">Smart models. Real decisions.</p>
+    <p class="subtitle">Explore concepts and applications</p>
 
     <div class="main-buttons">
 
+        <!-- Use Cases Section -->
         <a href="/use-cases" class="main-btn use-case">
             <h3>Use Cases</h3>
             <p>Real-world insights</p>
         </a>
 
+        <!-- Linear Regression Section -->
         <a href="/LinearRegression" class="main-btn regression">
             <h3>Linear Regression</h3>
             <p>Predict continuous values</p>
         </a>
 
+        <!-- Logistic Regression Section -->
         <a href="/LogisticRegression" class="main-btn logistic">
             <h3>Logistic Regression</h3>
             <p>Classify outcomes</p>
         </a>
 
+        <!-- SVM Section -->
         <a href="/SVM" class="main-btn svm">
             <h3>SVM (Support Vector Machine)</h3>
             <p>Advanced classification model</p>
+        </a>
+
+        <!-- Unsupervised Learning Section -->
+        <a href="/unsupervised" class="main-btn unsupervised">
+            <h3>Unsupervised Learning</h3>
+            <p>K-Means clustering application</p>
         </a>
 
     </div>

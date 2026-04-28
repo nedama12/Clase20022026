@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>K-Means Clustering</title>
+
+<style>
+
+/* ===== BASE ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #e2e8f0);
+    color: #1e293b;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+/* ===== TITLE ===== */
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 40px;
+}
+
+/* ===== CARD ===== */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== GRAPH ===== */
+.graph {
+    text-align: center;
+}
+
+.graph img {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 12px;
+}
+
+/* ===== CENTROIDS ===== */
+.centroids {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.centroid-box {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* Colors for clusters */
+.c1 { border-top: 5px solid #3b82f6; }
+.c2 { border-top: 5px solid #10b981; }
+.c3 { border-top: 5px solid #f59e0b; }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>K-Means Clustering</h1>
+    <p class="subtitle">
+        Visualization of 1000 data points grouped into clusters using the K-Means algorithm
+    </p>
+
+    <!-- CLUSTER GRAPH -->
+    <div class="card graph">
+        <h2 style="text-align:center;">Cluster Visualization</h2>
+        <img src="{{ url_for('static', filename='kmeans.png') }}">
+    </div>
+
+    <!-- VARIANCE GRAPH -->
+    <div class="card graph">
+        <h2 style="text-align:center;">Variance Reduction</h2>
+        <img src="{{ url_for('static', filename='variance.png') }}">
+    </div>
+
+    <!-- CENTROIDS -->
+    <div class="card">
+        <h2 style="text-align:center;">Cluster Centroids</h2>
+
+        <div class="centroids">
+
+            {% for c in centroids %}
+            <div class="centroid-box c{{ loop.index }}">
+                <h3>Cluster {{ loop.index }}</h3>
+                <p><strong>X:</strong> {{ c[0]|round(2) }}</p>
+                <p><strong>Y:</strong> {{ c[1]|round(2) }}</p>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <!-- INTERPRETATION -->
+    <div class="card">
+        <h2>Interpretation</h2>
+        <p>
+            This visualization presents the results of applying the K-Means clustering algorithm to a dataset of 1000 records.
+            Each color represents a distinct cluster, and the highlighted markers correspond to the centroids of each group.
+            The algorithm iteratively assigns data points to the nearest centroid and updates their positions until convergence is achieved.
+            The reduction in variance across iterations demonstrates how the model improves cluster compactness and accuracy.
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from kmeans_logic import run_kmeans
 import LinearRegression
 
 import pandas as pd
@@ -169,3 +170,20 @@ def SVMApplication():
         recall=recall,
         f1=f1
     )
+
+@app.route("/unsupervised")
+def unsupervised():
+    return render_template("unsupervised.html")
+
+@app.route("/kmeans-concepts")
+def kmeans_concepts():
+    return render_template("kmeans_concepts.html")
+
+@app.route("/kmeans-manual")
+def kmeans_manual():
+    return render_template("kmeans_manual.html")
+
+@app.route("/kmeans-app")
+def kmeans_app():
+    centroids = run_kmeans()
+    return render_template("kmeans_app.html", centroids=centroids)
