@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>K-Means Manual Exercise</title>
+
+<style>
+    
+/* ===== BASE ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #e2e8f0);
+    color: #1e293b;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+/* ===== TITLE ===== */
+h1 {
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 40px;
+}
+
+/* ===== CARD ===== */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== LIST ===== */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Manual K-Means Simulation</h1>
+    <p class="subtitle">
+        Step-by-step implementation of the K-Means algorithm using a dataset of 100 records
+    </p>
+
+    <!-- DATASET -->
+    <div class="card">
+        <h2>Dataset Description</h2>
+        <p>
+            A dataset of 100 records was created using two numerical features. These features represent
+            measurable attributes (such as age and income), allowing visualization and clustering in a 2D space.
+        </p>
+    </div>
+
+    <!-- PROCESS -->
+    <div class="card">
+        <h2>Algorithm Process</h2>
+        <p>
+            The K-Means algorithm was simulated manually through three iterations. The process followed these steps:
+        </p>
+
+        <ul>
+            <li>Selection of three initial centroids</li>
+            <li>Calculation of Euclidean distance between each point and the centroids</li>
+            <li>Assignment of each data point to the nearest centroid</li>
+            <li>Recalculation of centroids as the average of assigned points</li>
+            <li>Repetition of the process for three iterations</li>
+        </ul>
+    </div>
+
+    <!-- ITERATIONS -->
+    <div class="card">
+        <h2>Iterations and Results</h2>
+        <p>
+            During each iteration, the centroids were updated and the clusters became more refined.
+            Some data points changed their assigned cluster as the centroids moved toward more optimal positions.
+        </p>
+    </div>
+
+    <!-- VARIANCE -->
+    <div class="card">
+        <h2>Variance Analysis</h2>
+        <p>
+            The variance decreased across the iterations, demonstrating that the clusters became more compact.
+            This reduction indicates that data points are getting closer to their respective centroids,
+            improving the quality of clustering.
+        </p>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div class="card">
+        <h2>Final Conclusion</h2>
+        <p>
+            The manual simulation of the K-Means algorithm provided a clear understanding of how clustering works.
+            The iterative process successfully grouped similar data points, and the decrease in variance confirmed
+            that the model converged to an optimal solution.
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

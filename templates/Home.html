@@ -6,7 +6,7 @@
 
 <style>
 
-/* BASE */
+/* ===== BASE STYLES ===== */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -14,7 +14,7 @@ body {
     color: #1e293b;
 }
 
-/* NAVBAR */
+/* ===== NAVIGATION BAR ===== */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -30,6 +30,7 @@ body {
     font-weight: 600;
 }
 
+/* Navigation links */
 .nav-links a {
     text-decoration: none;
     margin-left: 20px;
@@ -42,26 +43,27 @@ body {
     color: #2563eb;
 }
 
-/* CONTENEDOR */
+/* ===== MAIN CONTAINER ===== */
 .container {
     text-align: center;
     margin-top: 120px;
     padding: 20px;
 }
 
-/* TITULO */
+/* ===== MAIN TITLE ===== */
 h1 {
     font-size: 48px;
     margin-bottom: 10px;
 }
 
+/* Subtitle */
 .subtitle {
     color: #64748b;
     margin-bottom: 60px;
     font-size: 18px;
 }
 
-/* BOTONES PRINCIPALES */
+/* ===== MAIN BUTTONS CONTAINER ===== */
 .main-buttons {
     display: flex;
     justify-content: center;
@@ -69,7 +71,7 @@ h1 {
     flex-wrap: wrap;
 }
 
-/* BOTON GRANDE */
+/* ===== CARD BUTTON STYLE ===== */
 .main-btn {
     width: 260px;
     height: 140px;
@@ -85,26 +87,26 @@ h1 {
     border: 1px solid #e5e7eb;
 }
 
-/* EFECTO HOVER */
+/* Hover effect */
 .main-btn:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
-/* TITULO BOTON */
+/* Button title */
 .main-btn h3 {
     margin: 0;
     font-size: 20px;
 }
 
-/* SUBTEXTO */
+/* Button subtitle */
 .main-btn p {
     margin-top: 8px;
     font-size: 14px;
     color: #64748b;
 }
 
-/* COLORES */
+/* ===== COLOR CATEGORIES ===== */
 .use-case {
     border-left: 5px solid #3b82f6;
 }
@@ -121,11 +123,17 @@ h1 {
     border-left: 5px solid #8b5cf6;
 }
 
+/* New category for Unsupervised Learning */
+.unsupervised {
+    border-left: 5px solid #ec4899;
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- ===== NAVBAR ===== -->
 <nav class="navbar">
     <h2>ML Project</h2>
     <div class="nav-links">
@@ -134,38 +142,46 @@ h1 {
         <a href="/LinearRegression">Regression</a>
         <a href="/LogisticRegression">Logistic</a>
         <a href="/SVM">SVM</a>
+        <a href="/unsupervised">Unsupervised</a>
     </div>
 </nav>
 
+<!-- ===== MAIN CONTENT ===== -->
 <div class="container">
 
     <h1>Machine Learning</h1>
-    <p class="subtitle">Explore concepts and application</p>
+    <p class="subtitle">Explore concepts and applications</p>
 
     <div class="main-buttons">
 
-        <!-- USE CASES -->
+        <!-- Use Cases Section -->
         <a href="/use-cases" class="main-btn use-case">
             <h3>Use Cases</h3>
             <p>Explore real-world applications</p>
         </a>
 
-        <!-- LINEAR -->
+        <!-- Linear Regression Section -->
         <a href="/LinearRegression" class="main-btn regression">
             <h3>Linear Regression</h3>
             <p>Prediction model & analysis</p>
         </a>
 
-        <!-- LOGISTIC -->
+        <!-- Logistic Regression Section -->
         <a href="/LogisticRegression" class="main-btn logistic">
             <h3>Logistic Regression</h3>
             <p>Predict yes or no outcomes</p>
         </a>
 
-        <!-- SVM -->
+        <!-- SVM Section -->
         <a href="/SVM" class="main-btn svm">
             <h3>SVM (Support Vector Machine)</h3>
             <p>Advanced classification model</p>
+        </a>
+
+        <!-- Unsupervised Learning Section -->
+        <a href="/unsupervised" class="main-btn unsupervised">
+            <h3>Unsupervised Learning</h3>
+            <p>K-Means clustering application</p>
         </a>
 
     </div>

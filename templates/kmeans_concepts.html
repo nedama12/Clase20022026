@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>K-Means Concepts</title>
+
+<style>
+
+/* ===== BASE ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #e2e8f0);
+    color: #1e293b;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+/* ===== TITLE ===== */
+h1 {
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 40px;
+}
+
+/* ===== CARD ===== */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== LIST ===== */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>K-Means Clustering Concepts</h1>
+    <p class="subtitle">
+        Understanding the fundamentals of unsupervised learning and clustering
+    </p>
+
+    <!-- UNSUPERVISED -->
+    <div class="card">
+        <h2>Unsupervised Learning</h2>
+        <p>
+            Unsupervised learning is a type of machine learning where the model analyzes and identifies patterns
+            in data without any labeled outputs. The algorithm must discover the structure of the data on its own.
+        </p>
+    </div>
+
+    <!-- CLUSTERING -->
+    <div class="card">
+        <h2>Clustering</h2>
+        <p>
+            Clustering is a technique used to group similar data points together. The goal is to maximize similarity
+            within clusters and minimize similarity between different clusters.
+        </p>
+    </div>
+
+    <!-- KMEANS -->
+    <div class="card">
+        <h2>K-Means Algorithm</h2>
+        <p>
+            K-Means is a popular clustering algorithm that partitions data into K groups. It works by assigning each
+            data point to the nearest centroid and then recalculating the centroid positions iteratively until convergence.
+        </p>
+    </div>
+
+    <!-- CENTROIDS -->
+    <div class="card">
+        <h2>Centroids</h2>
+        <p>
+            A centroid is the center point of a cluster. It is calculated as the average of all data points assigned
+            to that cluster and is updated in each iteration.
+        </p>
+    </div>
+
+    <!-- DISTANCE -->
+    <div class="card">
+        <h2>Distance Metric (Euclidean Distance)</h2>
+        <p>
+            The algorithm uses distance to determine how close a data point is to a centroid. The most common method
+            is Euclidean distance, which measures the straight-line distance between two points.
+        </p>
+    </div>
+
+    <!-- ITERATIONS -->
+    <div class="card">
+        <h2>Iterative Process</h2>
+        <p>
+            K-Means works through multiple iterations. In each iteration, data points are reassigned to the nearest
+            centroid and centroids are recalculated until the clusters stabilize.
+        </p>
+    </div>
+
+    <!-- VARIANCE -->
+    <div class="card">
+        <h2>Variance and Convergence</h2>
+        <p>
+            Variance measures how spread out the data points are within each cluster. As the algorithm progresses,
+            the variance decreases, indicating that clusters are becoming more compact and the model is converging.
+        </p>
+    </div>
+
+    <!-- APPLICATIONS -->
+    <div class="card">
+        <h2>Real-World Applications</h2>
+        <ul>
+            <li>Customer segmentation</li>
+            <li>Market analysis</li>
+            <li>Image segmentation</li>
+            <li>Anomaly detection</li>
+            <li>Recommendation systems</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
