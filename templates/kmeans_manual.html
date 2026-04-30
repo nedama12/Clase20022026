@@ -5,45 +5,106 @@
 <title>K-Means Manual Exercise</title>
 
 <style>
-    
+
 /* ===== BASE ===== */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #eef2f7, #e2e8f0);
-    color: #1e293b;
+    background: linear-gradient(135deg, #0f172a, #1e293b, #020617);
+    color: #e2e8f0;
+}
+
+/* ===== BACKGROUND GLOW ===== */
+.bg-glow {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(236,72,153,0.25), transparent);
+    top: -150px;
+    left: -150px;
+    filter: blur(120px);
+}
+
+.bg-glow2 {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(56,189,248,0.25), transparent);
+    bottom: -150px;
+    right: -150px;
+    filter: blur(120px);
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(20, 30, 50, 0.6);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logo {
+    color: #38bdf8;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: #cbd5f5;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #38bdf8;
 }
 
 /* ===== CONTAINER ===== */
 .container {
     max-width: 1000px;
-    margin: 60px auto;
+    margin: 100px auto 60px;
     padding: 20px;
+    animation: fadeUp 1s ease;
 }
 
 /* ===== TITLE ===== */
 h1 {
     text-align: center;
+    font-size: 42px;
+    background: linear-gradient(90deg, #ec4899, #38bdf8);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .subtitle {
     text-align: center;
-    color: #64748b;
+    color: #94a3b8;
     margin-bottom: 40px;
 }
 
 /* ===== CARD ===== */
 .card {
-    background: white;
+    background: rgba(255,255,255,0.05);
     padding: 30px;
     border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.08);
     margin-bottom: 30px;
     transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-5px);
+}
+
+/* ===== TEXT ===== */
+.card p {
+    color: #cbd5f5;
+    line-height: 1.6;
 }
 
 /* ===== LIST ===== */
@@ -53,6 +114,32 @@ ul {
 
 li {
     margin-bottom: 10px;
+    color: #cbd5f5;
+}
+
+/* ===== BACK ===== */
+.back {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    color: #94a3b8;
+    text-decoration: none;
+}
+
+.back:hover {
+    color: #38bdf8;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 </style>
@@ -60,6 +147,23 @@ li {
 
 <body>
 
+<div class="bg-glow"></div>
+<div class="bg-glow2"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">ML Project</div>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/use-cases">Use Cases</a>
+        <a href="/LinearRegression">Regression</a>
+        <a href="/LogisticRegression">Logistic</a>
+        <a href="/SVM">SVM</a>
+        <a href="/Unsupervised">Unsupervised</a>
+    </div>
+</nav>
+
+<!-- CONTENIDO -->
 <div class="container">
 
     <h1>Manual K-Means Simulation</h1>
@@ -67,59 +171,49 @@ li {
         Step-by-step implementation of the K-Means algorithm using a dataset of 100 records
     </p>
 
-    <!-- DATASET -->
     <div class="card">
         <h2>Dataset Description</h2>
         <p>
-            A dataset of 100 records was created using two numerical features. These features represent
-            measurable attributes (such as age and income), allowing visualization and clustering in a 2D space.
+            A dataset of 100 records was created using two numerical features,
+            allowing visualization and clustering in a 2D space.
         </p>
     </div>
 
-    <!-- PROCESS -->
     <div class="card">
         <h2>Algorithm Process</h2>
-        <p>
-            The K-Means algorithm was simulated manually through three iterations. The process followed these steps:
-        </p>
-
+        <p>The K-Means algorithm was simulated through three iterations:</p>
         <ul>
-            <li>Selection of three initial centroids</li>
-            <li>Calculation of Euclidean distance between each point and the centroids</li>
-            <li>Assignment of each data point to the nearest centroid</li>
-            <li>Recalculation of centroids as the average of assigned points</li>
-            <li>Repetition of the process for three iterations</li>
+            <li>Selection of initial centroids</li>
+            <li>Distance calculation (Euclidean)</li>
+            <li>Assignment to nearest centroid</li>
+            <li>Centroid recalculation</li>
+            <li>Iteration repetition</li>
         </ul>
     </div>
 
-    <!-- ITERATIONS -->
     <div class="card">
         <h2>Iterations and Results</h2>
         <p>
-            During each iteration, the centroids were updated and the clusters became more refined.
-            Some data points changed their assigned cluster as the centroids moved toward more optimal positions.
+            Centroids updated each iteration, refining clusters and improving grouping accuracy.
         </p>
     </div>
 
-    <!-- VARIANCE -->
     <div class="card">
         <h2>Variance Analysis</h2>
         <p>
-            The variance decreased across the iterations, demonstrating that the clusters became more compact.
-            This reduction indicates that data points are getting closer to their respective centroids,
-            improving the quality of clustering.
+            Variance decreased over time, indicating more compact and well-defined clusters.
         </p>
     </div>
 
-    <!-- CONCLUSION -->
     <div class="card">
         <h2>Final Conclusion</h2>
         <p>
-            The manual simulation of the K-Means algorithm provided a clear understanding of how clustering works.
-            The iterative process successfully grouped similar data points, and the decrease in variance confirmed
-            that the model converged to an optimal solution.
+            The simulation demonstrates how K-Means iteratively improves clustering
+            until convergence is achieved.
         </p>
     </div>
+
+    <a href="/unsupervised" class="back">← Back to Unsupervised</a>
 
 </div>
 
